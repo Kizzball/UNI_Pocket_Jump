@@ -1,10 +1,14 @@
 #include <raylib.h>
 
 int main(){
-    Initwindow(800,800,"meat killer")
+    Initwindow(800,800,"meat killer");
 
-    while (!windowShouldClose())
-        BeginDrawing()
+    while (!windowShouldClose()){
+        BeginDrawing();
+            clearbackgorund();
+        enddrawing();
+        closewindows)l
+    }
 
 
 
