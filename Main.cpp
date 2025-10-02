@@ -1,11 +1,11 @@
 #include <raylib.h>
 
 int main(){
-    Initwindow(800,800,"meat killer");
+    Initwindow(800,800,"meat killer"); //the windows size and text that will appaer in the top corner
 
     while (!windowShouldClose()){
         BeginDrawing();
-            clearbackgorund();
+            clearbackground();
         enddrawing();
         closewindows)l
     }
