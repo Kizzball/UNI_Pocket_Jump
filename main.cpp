@@ -1,15 +1,37 @@
-#include <raylib.h>
+#include "raylib.h"
+#include "stdlib.h"
+#include "stdio.h"
+typedef struct {
+        Rectangle rect;
+        Vector2 velocity;
+    Player;
+}
+int main(void) {     
+    const int screenWidth = 960; //Screen Width
+    const int screenHeight = 600; //s
 
-int main(){
-    Initwindow(800,800,"meat killer"); //the windows size and text that will appaer in the top corner
-
-    while (!windowShouldClose()){
+    InitWindow(screenWidth, screenHeight, "pocket dodge");
+    
+     
+    SetTargetFPS(60);// the frame rate
+    
+    // Main game loop
+    while (!WindowShouldClose())    // Detect window close button or ESC key
+    {
+        // Update
+        // Draw
+        
         BeginDrawing();
-            clearbackground();
-        enddrawing();
-        closewindows)l
+            ClearBackground(RAYWHITE);
+            
+            DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
+        EndDrawing();
+        
     }
 
+    // De-Initialization
+    
+    CloseWindow();        // Close window and OpenGL context
+    
 
-
-}
+    return 0;
