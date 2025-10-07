@@ -67,7 +67,7 @@ int main(void) {
     CloseWindow();        // Close window and OpenGL context
     
 
-    return 0;
+    return 0};
 
 void initGame(){
    // starting point and moving speed when standing still
@@ -148,6 +148,27 @@ void DrawGame(){
             DrawRectangleRec(platforms[i].rect, DARKGRAY);
         }
     }
-    //score text
-    DrawText()
+    //score text & placing
+    DrawText(TextFormat("Score: %.0f", score),10,10,20, BLACK);
+}
+void ResetPlatform(platform* platform){
+    //randomizes platforms cords
+    platform->rect =Rectangle{
+        (float)GetRandomValue(0,SCREEN_WIDTH -PLATFORM_WIDTH),
+        (float)GetRandomValue(-200,0),
+        (float)PLATFORM_WIDTH,
+        (float)PLATFORM_HEIGHT,
+    
+    };
+}
+// the "Game Over" display
+void DrawGameOver(){
+    DrawText("GAME OVER you failed",SCREEN_WIDTH / 2 -100,SCREEN_HEIGHT / 2 - 50, 40, RED);
+    DrawText(TextFormat("Score:%.0f", score), SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT / 2, 20, BLACK);
+    DrawText("Press R to TRY AGAIN",SCREEN_WIDTH / 2 -100,SCREEN_HEIGHT / 2 + 50, 20, DARKGRAY);
+
+    //restart button
+    if (IsKeyPressed(KEY_R)){
+        initGame();
+    }
 }
