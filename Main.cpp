@@ -85,4 +85,16 @@ void initGame(){
     highestPlatformY = SCREEN_HEIGHT;
     gameOver =false;
     }
-    
+
+
+
+//Function to update the game logic each frame???????
+void UpdateGame(float dt)
+//player jump code 
+if (IsKeyPressed(KEY_space) && player.velocity.y == 0) //jump only if on floor and press space
+{
+    player.velocity.y = JUMP_FORCE;
+}
+
+
+ 
