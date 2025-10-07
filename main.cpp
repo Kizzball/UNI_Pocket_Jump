@@ -95,7 +95,6 @@ if (IsKeyPressed(KEY_SPACE) && player.velocity.y == 0) //jump only if on floor a
 {player.velocity.y = JUMP_FORCE;}
 
 //Player controls code
-
 if (IsKeyDown(KEY_LEFT)) player.rect.x -= 200 * dt;
 if (IsKeyDown(KEY_RIGHT)) player.rect.x += 200 * dt;
 
@@ -106,11 +105,9 @@ player.velocity.y += GRAVITY *dt;
 player.rect.y += player.velocity.y *dt;
 player.rect.x += player.velocity.x *dt;
 
-
 //remove unseen platforms?!?!------- maybe broken
-If (platform.rect > SCREEN_HEIGHT ){platforms[i].active = false;}
-
-
+If (platform.rect > SCREEN_HEIGHT ){
+    platforms[i].active = false;}
 
 //collsions with platforms for player
 for (int i = 0; i < MAX_PLATFORM; 1++ {
@@ -147,6 +144,10 @@ void DrawGame(){
 
     //Makes the platform appearance
     for (int i = 0; i < MAX_PLATFORM; i++){
-        
+        If(platforms[i].active){
+            DrawRectangleRec(platforms[i].rect, DARKGRAY);
+        }
     }
+    //score text
+    DrawText()
 }
