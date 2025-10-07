@@ -80,7 +80,9 @@ void initGame(){
         platforms[i].rect.y =SCREEN_HEIGHT - (i + 1) * 100; //vetical placement
         platforms[i].active =true //actived all platforms????
     }
+    //Reseting scores and state in the game
+    score = 0;
+    highestPlatformY = SCREEN_HEIGHT;
+    gameOver =false;
     }
-
-
-}
+    
