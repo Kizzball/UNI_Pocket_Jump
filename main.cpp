@@ -91,10 +91,26 @@ void initGame(){
 //Function to update the game logic each frame???????
 void UpdateGame(float dt)
 //player jump code 
-if (IsKeyPressed(KEY_space) && player.velocity.y == 0) //jump only if on floor and press space
-{
-    player.velocity.y = JUMP_FORCE;
+if (IsKeyPressed(KEY_SPACE) && player.velocity.y == 0) //jump only if on floor and press space
+{player.velocity.y = JUMP_FORCE;}
+
+//Player controls code
+
+if (IsKeyDown(KEY_LEFT)) player.rect.x -= 200 * dt;
+if (IsKeyDown(KEY_RIGHT)) player.rect.x += 200 * dt;
+
+//Gravity for the player
+player.velocity.y += GRAVITY *dt;
+
+//Update the player's position based on velocity?????
+player.rect.y += player.velocity.y *dt;
+player.rect.x += player.velocity.x *dt;
+
+//collsions with platforms for player
+for (int i = 0; i < MAX_PLATFORM; 1++ {
+    if (platforms[i].active && CheckCollisionRes(player.rect,platforms[i].rect) && player.velocity.y > 0)
+    // stops player phasing
+    player.velocity.y = 0
+    player.rect.y = platforms[i].rect.y - PLAYER_HEIGHT 
 }
-
-
  
