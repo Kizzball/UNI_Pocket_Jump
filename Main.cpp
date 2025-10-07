@@ -106,11 +106,47 @@ player.velocity.y += GRAVITY *dt;
 player.rect.y += player.velocity.y *dt;
 player.rect.x += player.velocity.x *dt;
 
+
+//remove unseen platforms?!?!------- maybe broken
+If (platform.rect > SCREEN_HEIGHT ){platforms[i].active = false;}
+
+
+
 //collsions with platforms for player
 for (int i = 0; i < MAX_PLATFORM; 1++ {
-    if (platforms[i].active && CheckCollisionRes(player.rect,platforms[i].rect) && player.velocity.y > 0)
+    if (platforms[i].active && CheckCollisionRes(player.rect,platforms[i].rect) && player.velocity.y > 0){
     // stops player phasing
     player.velocity.y = 0
-    player.rect.y = platforms[i].rect.y - PLAYER_HEIGHT 
+    player.rect.y = platforms[i].rect.y - PLAYER_HEIGHT;} //player position adjustment?????
 }
- 
+//ending screen when fall
+If(player.rect.y > SCREEN_HEIGHT){
+    gameOver = true;
+}
+
+//Scroll feature
+If (player.rect.y < SCREEN_HEIGHT / 2){
+    float offset = SCREEN_HEIGHT / 2 - player.rect.y;
+    player.rect.y +=- offset;
+    score += offset / 10;
+    
+    for (int i = 0; i < MAX_PLATFORM; i++){
+        platforms[i].rect.y += offset;
+        // reset platforms if they move off the bottom of the screen
+        if(platforms[i].rect.y > SCREEN_HEIGHT){
+            ResetPlatform(&platforms[i]);
+            platforms[i]rect.y =highestPlatformY - 100; 
+            highestPlatformY -= 100;
+
+        }
+    }
+
+}
+void DrawGame(){
+    DrawRectangleRec(player.rect, RED);
+
+    //Makes the platform appearance
+    for (int i = 0; i < MAX_PLATFORM; i++){
+        
+    }
+}
