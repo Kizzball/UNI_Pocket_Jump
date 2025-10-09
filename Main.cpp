@@ -21,17 +21,17 @@ typedef struct{
     Rectangle rect;
     Vector2 velocity;
     } Player;
-Platform platforms[MAX_PLATFORM];
-Player player;
-float score = 0;
-int highestPlatformY = SCREEN_HEIGHT;
-bool gameOver = false
+    Platform platforms[MAX_PLATFORM];
+    Player player;
+    float score = 0;
+    int highestPlatformY = SCREEN_HEIGHT;
+    bool gameOver = false;
 
 void initGame();
 void UpdateGame(float dt);
 void DrawGame();
 void DrawGameOver();
-void ResetPlatform(Platforms* platform);
+void ResetPlatform(Platform* platform);
 
 int main(void) {     
     const int screenWidth = 960; //Screen Width
