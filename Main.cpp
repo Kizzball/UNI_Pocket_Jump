@@ -17,10 +17,12 @@ typedef struct {
     Rectangle rect;
         bool active;
     } Platform;
+
 typedef struct{
     Rectangle rect;
     Vector2 velocity;
     } Player;
+    
     Platform platforms[MAX_PLATFORM];
     Player player;
     float score = 0;
@@ -33,9 +35,9 @@ void DrawGame();
 void DrawGameOver();
 void ResetPlatform(Platform* platform);
 
-int main(void) {     
+int main() {     
     const int screenWidth = 960; //Screen Width
-    const int screenHeight = 600; //s
+    const int screenHeight = 600; //Screen Height
 
     InitWindow(screenWidth, screenHeight, "pocket jump");
     
@@ -67,7 +69,7 @@ int main(void) {
     CloseWindow();        // Close window and OpenGL context
     
 
-    return 0};
+    return 0;}
 
 void initGame(){
    // starting point and moving speed when standing still
@@ -78,7 +80,7 @@ void initGame(){
     for(int i = 0; i < MAX_PLATFORM; i++) {
         ResetPlatform(&platforms[i]); //RANDOM CORDS
         platforms[i].rect.y =SCREEN_HEIGHT - (i + 1) * 100; //vetical placement
-        platforms[i].active =true //actived all platforms????
+        platforms[i].active =true ; //actived all platforms????
     }
     //Reseting scores and state in the game
     score = 0;
@@ -89,7 +91,7 @@ void initGame(){
 
 
 //Function to update the game logic each frame???????
-void UpdateGame(float dt)
+void UpdateGame(float dt){
 //player jump code 
 if (IsKeyPressed(KEY_SPACE) && player.velocity.y == 0) //jump only if on floor and press space
 {player.velocity.y = JUMP_FORCE;}
@@ -106,19 +108,19 @@ player.rect.y += player.velocity.y *dt;
 player.rect.x += player.velocity.x *dt;
 
 //remove unseen platforms?!?!------- maybe broken
-If (platform.rect > SCREEN_HEIGHT ){
-    platforms[i].active = false;}
+//If (platform.rect > SCREEN_HEIGHT ){platforms[i].active = false;}
 
 //collsions with platforms for player
-for (int i = 0; i < MAX_PLATFORM; 1++ {
-    if (platforms[i].active && CheckCollisionRes(player.rect,platforms[i].rect) && player.velocity.y > 0){
+for (int i = 0; i < MAX_PLATFORM; i++) {
+    if (platforms[i].active && CheckCollisionRecs(player.rect,platforms[i].rect) && player.velocity.y > 0){
     // stops player phasing
-    player.velocity.y = 0
+    player.velocity.y = 0;
     player.rect.y = platforms[i].rect.y - PLAYER_HEIGHT;} //player position adjustment?????
+    }
 }
 //ending screen when fall
-If(player.rect.y > SCREEN_HEIGHT){
-    gameOver = true;
+    0if (player.rect.y > SCREEN_HEIGHT){
+        gameOver = true;
 }
 
 //Scroll feature
