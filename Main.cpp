@@ -124,7 +124,7 @@ for (int i = 0; i < MAX_PLATFORM; i++) {
 }
 
 //Scroll feature
-If (player.rect.y < SCREEN_HEIGHT / 2){
+if (player.rect.y < SCREEN_HEIGHT / 2){
     float offset = SCREEN_HEIGHT / 2 - player.rect.y;
     player.rect.y +=- offset;
     score += offset / 10;
@@ -134,7 +134,7 @@ If (player.rect.y < SCREEN_HEIGHT / 2){
         // reset platforms if they move off the bottom of the screen
         if(platforms[i].rect.y > SCREEN_HEIGHT){
             ResetPlatform(&platforms[i]);
-            platforms[i]rect.y =highestPlatformY - 100; 
+            platforms[i].rect.y =highestPlatformY - 100; 
             highestPlatformY -= 100;
 
         }
@@ -146,7 +146,7 @@ void DrawGame(){
 
     //Makes the platform appearance
     for (int i = 0; i < MAX_PLATFORM; i++){
-        If(platforms[i].active){
+        if(platforms[i].active){
             DrawRectangleRec(platforms[i].rect, DARKGRAY);
         }
     }
