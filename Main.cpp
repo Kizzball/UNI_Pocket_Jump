@@ -25,7 +25,7 @@
     
     Platform platforms[MAX_PLATFORMS];
     Player player;
-    float score = 0 - 26;
+    float score = 0;
     int highestPlatformY = SCREEN_HEIGHT;
     bool gameOver = false;
     
