@@ -100,15 +100,22 @@
             
             if (IsKeyPressed(KEY_SPACE) && player.velocity.y == 0){
             player.velocity.y = JUMP_FORCE;
-             
             }
+            
             if (IsKeyPressed(KEY_UP) && player.velocity.y == 0){
-            player.velocity.y = JUMP_FORCE;
-             
+            player.velocity.y = JUMP_FORCE; 
+            }
+            
+            if (IsKeyPressed(KEY_W) && player.velocity.y == 0){
+            player.velocity.y = JUMP_FORCE; 
             }
             
             if (IsKeyDown(KEY_LEFT)) player.rect.x -= 200 * dt;
             if (IsKeyDown(KEY_RIGHT)) player.rect.x += 200 * dt;
+            
+            
+            if (IsKeyDown(KEY_A)) player.rect.x -= 200 * dt;
+            if (IsKeyDown(KEY_D)) player.rect.x += 200 * dt;
             
             player.velocity.y += GRAVITY * dt;
             
@@ -179,9 +186,9 @@
             
         }
         void DrawGameOver(){
-            DrawText("Game Over", SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT / 2 -50, SCREEN_WIDTH/ 24, RED);
+            DrawText("Game Over", SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT / 2 -200, SCREEN_WIDTH/ 24, RED);
             DrawText(TextFormat("Final Score: %.0f", score-56), SCREEN_WIDTH /2 -100, SCREEN_HEIGHT / 2, SCREEN_WIDTH/48, BLACK);
-            DrawText("Press R to Try Again", SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT / 2 + 50, SCREEN_WIDTH/48 ,DARKGRAY);
+            DrawText("Press R to Try Again", SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT / 2 + 200, SCREEN_WIDTH/48 ,DARKGRAY);
             
             if (IsKeyPressed(KEY_R)){
                 InitGame();
