@@ -39,11 +39,12 @@
     int main (){
         InitWindow(SCREEN_WIDTH,SCREEN_HEIGHT,"Pocket Jump");
         
-        InitAudioDevice();              
-    Sound sound = LoadSound("Resource/jump(1).wav");
+        //InitAudioDevice();              
+        //Sound sound = LoadSound("Resource/jump(1).wav");
+        
         InitGame();
         
-        bool pause = false;
+        //bool pause = false;
 
         SetTargetFPS(60);
         
@@ -51,8 +52,8 @@
             
         
 
-            if (IsKeyPressed(KEY_SPACE)){
-                PlaySound(sound);
+            //if (IsKeyPressed(KEY_SPACE)){
+               // PlaySound(sound);
 
             float dt = GetFrameTime();
             
@@ -71,16 +72,14 @@
                 EndDrawing();
             
             }
-            UnloadSound(sound);
-
-            }
+            //UnloadSound(sound);
+            //CloseAudioDevice();
             
-            CloseAudioDevice();
-
             CloseWindow();
             return 0;
-            
-    }
+           
+        }
+              
     
     void InitGame(){
         
