@@ -2,8 +2,8 @@
 #include "stdlib.h"
 #include "stdio.h"
 
-#define SCREEN_WIDTH 960
-#define SCREEN_HEIGHT 600
+#define SCREEN_WIDTH 1920
+#define SCREEN_HEIGHT 1200
 #define PLATFORM_WIDTH 100
 #define PLATFORM_HEIGHT 20
 #define PLAYER_WIDTH 30 
@@ -25,7 +25,7 @@
     
     Platform platforms[MAX_PLATFORMS];
     Player player;
-    float score = (0-26);
+    float score = 0;
     int highestPlatformY = SCREEN_HEIGHT;
     bool gameOver = false;
     
@@ -159,7 +159,7 @@
                 }
             }
             
-            DrawText(TextFormat("Current Score: %.0f", score-26), 10, 10, 20, BLACK);
+            DrawText(TextFormat("Current Score: %.0f", score-56), 10, 10, 20, BLACK);
             
         }
                     
@@ -179,9 +179,9 @@
             
         }
         void DrawGameOver(){
-            DrawText("Game Over", SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT / 2 -50, 40, RED);
-            DrawText(TextFormat("Final Score: %.0f", score-26), SCREEN_WIDTH /2 -100, SCREEN_HEIGHT / 2, 20, BLACK);
-            DrawText("Press R to Try Again", SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT / 2 + 50, 20 ,DARKGRAY);
+            DrawText("Game Over", SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT / 2 -50, SCREEN_WIDTH/ 24, RED);
+            DrawText(TextFormat("Final Score: %.0f", score-56), SCREEN_WIDTH /2 -100, SCREEN_HEIGHT / 2, SCREEN_WIDTH/48, BLACK);
+            DrawText("Press R to Try Again", SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT / 2 + 50, SCREEN_WIDTH/48 ,DARKGRAY);
             
             if (IsKeyPressed(KEY_R)){
                 InitGame();
