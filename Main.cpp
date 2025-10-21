@@ -10,7 +10,7 @@
 #define PLAYER_HEIGHT 30
 #define GRAVITY 300
 #define JUMP_FORCE -400
-#define MAX_PLATFORMS 10
+#define MAX_PLATFORMS 60
 
     typedef struct {
         Rectangle rect;
@@ -25,7 +25,7 @@
     
     Platform platforms[MAX_PLATFORMS];
     Player player;
-    float score = 0;
+    float score = (0-26);
     int highestPlatformY = SCREEN_HEIGHT;
     bool gameOver = false;
     
@@ -83,7 +83,7 @@
     
     void InitGame(){
         
-        player.rect = Rectangle{SCREEN_WIDTH / 2 - PLAYER_WIDTH / 2, 40, PLAYER_WIDTH, PLAYER_HEIGHT};
+        player.rect = Rectangle{SCREEN_WIDTH / 2 - PLAYER_WIDTH / 3, 40, PLAYER_WIDTH, PLAYER_HEIGHT};
         player.velocity = Vector2{0, 0};
         
         for (int i = 0; i < MAX_PLATFORMS; i++){
@@ -159,7 +159,7 @@
                 }
             }
             
-            DrawText(TextFormat("Current Score: %.0f", score), 10, 10, 20, BLACK);
+            DrawText(TextFormat("Current Score: %.0f", score-26), 10, 10, 20, BLACK);
             
         }
                     
@@ -180,7 +180,7 @@
         }
         void DrawGameOver(){
             DrawText("Game Over", SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT / 2 -50, 40, RED);
-            DrawText(TextFormat("Final Score: %.0f", score), SCREEN_WIDTH /2 -100, SCREEN_HEIGHT / 2, 20, BLACK);
+            DrawText(TextFormat("Final Score: %.0f", score-26), SCREEN_WIDTH /2 -100, SCREEN_HEIGHT / 2, 20, BLACK);
             DrawText("Press R to Try Again", SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT / 2 + 50, 20 ,DARKGRAY);
             
             if (IsKeyPressed(KEY_R)){
