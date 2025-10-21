@@ -186,9 +186,9 @@
             
         }
         void DrawGameOver(){
-            DrawText("Game Over", SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT / 2 -200, SCREEN_WIDTH/ 24, RED);
-            DrawText(TextFormat("Final Score: %.0f", score-56), SCREEN_WIDTH /2 -100, SCREEN_HEIGHT / 2, SCREEN_WIDTH/48, BLACK);
-            DrawText("Press R to Try Again", SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT / 2 + 200, SCREEN_WIDTH/48 ,DARKGRAY);
+            DrawText("Game Over", SCREEN_WIDTH / 2 - 200, SCREEN_HEIGHT / 2 -200, SCREEN_WIDTH/ 24, RED);
+            DrawText(TextFormat("Final Score: %.0f", score-56), SCREEN_WIDTH /2 - 200, SCREEN_HEIGHT / 2, SCREEN_WIDTH/48, BLACK);
+            DrawText("Press R to Try Again", SCREEN_WIDTH / 2 - 200, SCREEN_HEIGHT / 2 + 200, SCREEN_WIDTH/48 ,DARKGRAY);
             
             if (IsKeyPressed(KEY_R)){
                 InitGame();
