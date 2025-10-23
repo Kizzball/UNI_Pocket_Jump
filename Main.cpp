@@ -96,17 +96,17 @@
             
             if (IsKeyPressed(KEY_SPACE) && player.velocity.y == 0){
             player.velocity.y = JUMP_FORCE
-            ,PlaySound(Sound)
+            //,PlaySound(Sound)
             ;}
             
             if (IsKeyPressed(KEY_UP) && player.velocity.y == 0){
             player.velocity.y = JUMP_FORCE
-            ,PlaySound(Sound)
+            //,PlaySound(Sound)
             ;}
             
             if (IsKeyPressed(KEY_W) && player.velocity.y == 0){
             player.velocity.y = JUMP_FORCE
-            ,PlaySound(Sound)
+            //,PlaySound(Sound)
             ;}
             
             if (IsKeyDown(KEY_LEFT)) player.rect.x -= 200 * dt;
