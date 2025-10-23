@@ -39,8 +39,8 @@
     int main (){
         InitWindow(SCREEN_WIDTH,SCREEN_HEIGHT,"Pocket Jump");
         
-        ////InitAudioDevice();              
-        ////Sound sound = LoadSound("Resource/jump(1).wav");
+        InitAudioDevice();              
+        Sound sound = LoadSound("Resource/jump(1).wav");
         
         InitGame();
         
@@ -50,10 +50,6 @@
         
         while (!WindowShouldClose()){
             
-        
-
-            ////if (IsKeyPressed(KEY_SPACE)){
-               //// PlaySound(sound);
 
             float dt = GetFrameTime();
             
@@ -72,8 +68,8 @@
                 EndDrawing();
             
             }
-            ////UnloadSound(sound);
-            ////CloseAudioDevice();
+            UnloadSound(sound);
+            CloseAudioDevice();
             
             CloseWindow();
             return 0;
@@ -99,16 +95,19 @@
         void UpdateGame(float dt){
             
             if (IsKeyPressed(KEY_SPACE) && player.velocity.y == 0){
-            player.velocity.y = JUMP_FORCE;
-            }
+            player.velocity.y = JUMP_FORCE
+            ,PlaySound(Sound)
+            ;}
             
             if (IsKeyPressed(KEY_UP) && player.velocity.y == 0){
-            player.velocity.y = JUMP_FORCE; 
-            }
+            player.velocity.y = JUMP_FORCE
+            ,PlaySound(Sound)
+            ;}
             
             if (IsKeyPressed(KEY_W) && player.velocity.y == 0){
-            player.velocity.y = JUMP_FORCE; 
-            }
+            player.velocity.y = JUMP_FORCE
+            ,PlaySound(Sound)
+            ;}
             
             if (IsKeyDown(KEY_LEFT)) player.rect.x -= 200 * dt;
             if (IsKeyDown(KEY_RIGHT)) player.rect.x += 200 * dt;
