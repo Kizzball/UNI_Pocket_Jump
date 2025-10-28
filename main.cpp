@@ -45,8 +45,6 @@
         
         
         InitGame();
-        
-        ////bool pause = false;
 
         SetTargetFPS(60);
         
@@ -66,6 +64,7 @@
             
             BeginDrawing();
             ClearBackground(RAYWHITE);
+            DrawTextureV(playr, (Vector2){SCREEN_WIDTH /2, SCREEN_HEIGHT/2}, WHITE);
             
             if (gameOver){
                 DrawGameOver();
@@ -77,6 +76,7 @@
             
             }
             UnloadSound(sound);
+            UnloadTexture(playr);
             CloseAudioDevice();
             
             CloseWindow();
