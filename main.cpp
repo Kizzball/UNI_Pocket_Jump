@@ -41,6 +41,8 @@
         
         InitAudioDevice();              
         Sound sound = LoadSound("Resource/jump(1).wav");
+        Texture2D playr = LoadTexture("")
+        
         
         InitGame();
         
@@ -74,7 +76,7 @@
                 EndDrawing();
             
             }
-            //UnloadSound(sound);
+            UnloadSound(sound);
             CloseAudioDevice();
             
             CloseWindow();
