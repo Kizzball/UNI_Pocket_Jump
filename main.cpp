@@ -40,8 +40,8 @@
         InitWindow(SCREEN_WIDTH,SCREEN_HEIGHT,"Pocket Jump");
         
         InitAudioDevice();              
-        Sound sound = LoadSound("Resource/jump(1).wav");
-        Texture2D playr = LoadTexture("")
+        Sound sound = LoadSound("Resource/jump.wav");
+        Texture2D playr = LoadTexture("Resource/Pocket.png")
         
         
         InitGame();
