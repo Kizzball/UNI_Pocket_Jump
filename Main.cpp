@@ -45,8 +45,6 @@
         
         
         InitGame();
-        
-        ////bool pause = false;
 
         SetTargetFPS(60);
         
