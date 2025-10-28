@@ -121,7 +121,7 @@
             player.rect.y += player.velocity.y * dt;
             player.rect.x += player.velocity.x * dt;
             
-            //UnloadSound(sound)
+            
             
             for(int i = 0; i < MAX_PLATFORMS; i++) {
                 if (platforms[i].active && CheckCollisionRecs(player.rect, platforms[i].rect) && player.velocity.y > 0){
