@@ -101,19 +101,13 @@
         void UpdateGame(float dt){
             
             if (IsKeyPressed(KEY_SPACE) && player.velocity.y == 0){
-            player.velocity.y = JUMP_FORCE
-            //,PlaySound(Sound)
-            ;}
+            player.velocity.y = JUMP_FORCE;}
             
             if (IsKeyPressed(KEY_UP) && player.velocity.y == 0){
-            player.velocity.y = JUMP_FORCE
-            //,PlaySound(Sound)
-            ;}
+            player.velocity.y = JUMP_FORCE;}
             
             if (IsKeyPressed(KEY_W) && player.velocity.y == 0){
-            player.velocity.y = JUMP_FORCE
-            //,PlaySound(Sound)
-            ;}
+            player.velocity.y = JUMP_FORCE;}
             
             if (IsKeyDown(KEY_LEFT)) player.rect.x -= 200 * dt;
             if (IsKeyDown(KEY_RIGHT)) player.rect.x += 200 * dt;
