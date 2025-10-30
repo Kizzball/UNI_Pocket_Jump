@@ -41,7 +41,7 @@
         
         InitAudioDevice();              
         Sound sound = LoadSound("Resource/jump.wav");
-        Texture2D playr = LoadTexture("Resource/PocketLine.png");
+        Texture2D playr = LoadTexture("Resource/PocketNoline.png");
         
         
         InitGame();
