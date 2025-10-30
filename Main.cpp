@@ -41,7 +41,7 @@
         
         InitAudioDevice();              
         Sound sound = LoadSound("Resource/jump.wav");
-        Texture2D playr = LoadTexture("Resource/PocketNoline.png");
+        //Texture2D playr = LoadTexture("Resource/PocketNoline.png");
         
         
         InitGame();
@@ -64,7 +64,7 @@
             
             BeginDrawing();
             ClearBackground(RAYWHITE);
-            DrawTextureV(playr, (Vector2){SCREEN_WIDTH /2, SCREEN_HEIGHT/2}, WHITE);
+            //DrawTextureV(playr, (Vector2){SCREEN_WIDTH /2-100, SCREEN_HEIGHT*0.75}, WHITE);
             
             if (gameOver){
                 DrawGameOver();
@@ -76,7 +76,7 @@
             
             }
             UnloadSound(sound);
-            UnloadTexture(playr);
+            //UnloadTexture(playr);
             CloseAudioDevice();
             
             CloseWindow();
@@ -168,11 +168,17 @@
                     DrawRectangleRec(platforms[i].rect, BLUE);
                 }
             }
+            Texture2D playr = LoadTexture("Resource/PocketNoline.png");
             
+            
+            DrawTextureV(playr, (Vector2){SCREEN_WIDTH /2-120, SCREEN_HEIGHT/8}, WHITE);
             DrawText(TextFormat("Current Score: %.0f", score-56), 10, 10, 20, BLACK);
             
+            
+            
+            //UnloadTexture(playr);            
         }
-                    
+        
             
             
         void ResetPlatform(Platform* platform){
