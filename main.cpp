@@ -41,10 +41,9 @@
         
         InitAudioDevice();              
         Sound sound = LoadSound("Resource/jump.wav");
-        AudioStream mus = LoadAudioStream("Resource/On & On - Cartoon, feat. Daniel Levi");
+        Music mus = LoadMusicStream("Resource/On & On - Cartoon, feat. Daniel Levi.mp3");
         
-        
-        InitGame();
+         
 
         SetTargetFPS(60);
         
@@ -61,14 +60,16 @@
             {PlaySound(sound);}
             
             
-            PlayAudioStream(mus);
-            UpdateAudioStream(mus);
+            PlayMusicStream(mus);
+            
             
             UpdateGame(dt);
+            UpdateMusicStream(mus);
+            
             
             BeginDrawing();
             ClearBackground(RAYWHITE);
-            //DrawTextureV(playr, (Vector2){SCREEN_WIDTH /2-100, SCREEN_HEIGHT*0.75}, WHITE);
+            
             
             if (gameOver){
                 DrawGameOver();
