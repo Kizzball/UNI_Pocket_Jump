@@ -41,7 +41,7 @@
         
         InitAudioDevice();              
         Sound sound = LoadSound("Resource/jump.wav");
-        //MusicStream mus = ("Resource/PocketNoline.png");
+        AudioStream mus = LoadAudioStream("Resource/Cartoon, Daniel Levi, Jéja - On & On (feat. Daniel Levi) [NCS Release].mp3");
         
         
         InitGame();
@@ -59,6 +59,10 @@
             {PlaySound(sound);}
             if(IsKeyPressed(KEY_W) && player.velocity.y == 0)
             {PlaySound(sound);}
+            
+            
+            PlayAudioStream(mus);
+            UpdateAudioStream(mus);
             
             UpdateGame(dt);
             
