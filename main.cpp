@@ -41,7 +41,7 @@
         
         InitAudioDevice();              
         Sound sound = LoadSound("Resource/jump.wav");
-        //Texture2D playr = LoadTexture("Resource/PocketNoline.png");
+        //MusicStream mus = ("Resource/PocketNoline.png");
         
         
         InitGame();
@@ -198,6 +198,7 @@
             DrawText("Game Over", SCREEN_WIDTH / 2 - 200, SCREEN_HEIGHT / 2 -200, SCREEN_WIDTH/ 24, RED);
             DrawText(TextFormat("Final Score: %.0f", score-56), SCREEN_WIDTH /2 - 200, SCREEN_HEIGHT / 2, SCREEN_WIDTH/48, BLACK);
             DrawText("Press R to Try Again", SCREEN_WIDTH / 2 - 200, SCREEN_HEIGHT / 2 + 200, SCREEN_WIDTH/48 ,DARKGRAY);
+            DrawText("Song: Cartoon, Jéja - On & On (feat. Daniel Levi) [NCS Release]Music provided by NoCopyrightSoundsFree Download/Stream: http://ncs.io/onandonWatch: http://youtu.be/K4DyBUG242c", 100 , SCREEN_HEIGHT / 2 + 400, 19 ,DARKGRAY);
             
             if (IsKeyPressed(KEY_R)){
                 InitGame();
